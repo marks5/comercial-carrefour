@@ -24,6 +24,8 @@ repositories {
 }
 
 dependencies {
+	implementation("com.google.zxing:core:3.3.3")
+	implementation("com.google.zxing:javase:3.3.3")
 	implementation("io.springfox:springfox-swagger2:2.9.2")
 	implementation("io.springfox:springfox-swagger-ui:2.9.2")
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
