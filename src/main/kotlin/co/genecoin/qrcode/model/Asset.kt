@@ -1,7 +1,9 @@
 package co.genecoin.qrcode.model
 
+import com.fasterxml.jackson.annotation.JsonFormat
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
+import org.springframework.format.annotation.DateTimeFormat
 import java.util.*
 
 @Document
@@ -26,7 +28,7 @@ data class Asset(
         * ** necessidade deste cliente atual **
         *
         *  */
-        var weights: List<AssetWeight>? = null,
+        var weight: AssetWeight,
         /**
         *
         * Data da coleta, uma vez não nulo, não poderá ser alterado novamente.
@@ -78,7 +80,7 @@ data class Asset(
         var quality: AssetQuality? = null,
         /**
          *
-         * Foto do ativo
+         * Imagem do ativo
          *
          *  */
         var assetPhoto: String
@@ -86,7 +88,7 @@ data class Asset(
 
 data class LatLng(val lat: Double, val lng: Double)
 data class User(val email: String)
-data class AssetWeight(val weight: Double, val latLng: LatLng)
+data class AssetWeight(val weight: Double, val type: String)
 
 enum class AssetQuality{
         MUITO_RUIM,
