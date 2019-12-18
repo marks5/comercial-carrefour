@@ -34,18 +34,21 @@ data class Asset(
         * Data da coleta, uma vez não nulo, não poderá ser alterado novamente.
         *
         *  */
+        @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
         var collectDate: Date? = null,
         /**
         *
         * Data da chegada, uma vez não nulo, não poderá ser alterado novamente.
         *
         *  */
+        @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
         var arrivalDate: Date? = null,
         /**
         *
         * Data do armazenamento, uma vez não nulo, não poderá ser alterado novamente.
         *
         *  */
+        @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
         var storedDate: Date? = null,
         /**
         *
