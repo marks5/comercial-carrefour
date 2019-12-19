@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.format.annotation.DateTimeFormat
+import java.sql.Timestamp
 import java.util.*
 
 @Document
@@ -34,21 +35,21 @@ data class Asset(
         * Data da coleta, uma vez não nulo, não poderá ser alterado novamente.
         *
         *  */
-        @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ")
         var collectDate: Date? = null,
         /**
         *
         * Data da chegada, uma vez não nulo, não poderá ser alterado novamente.
         *
         *  */
-        @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ")
         var arrivalDate: Date? = null,
         /**
         *
         * Data do armazenamento, uma vez não nulo, não poderá ser alterado novamente.
         *
         *  */
-        @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ")
         var storedDate: Date? = null,
         /**
         *
