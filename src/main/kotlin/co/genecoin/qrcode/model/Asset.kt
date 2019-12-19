@@ -35,21 +35,21 @@ data class Asset(
         * Data da coleta, uma vez não nulo, não poderá ser alterado novamente.
         *
         *  */
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ")
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
         var collectDate: Date? = null,
         /**
         *
         * Data da chegada, uma vez não nulo, não poderá ser alterado novamente.
         *
         *  */
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ")
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
         var arrivalDate: Date? = null,
         /**
         *
         * Data do armazenamento, uma vez não nulo, não poderá ser alterado novamente.
         *
         *  */
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ")
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
         var storedDate: Date? = null,
         /**
         *
