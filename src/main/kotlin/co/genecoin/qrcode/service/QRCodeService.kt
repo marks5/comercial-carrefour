@@ -3,12 +3,12 @@ package co.genecoin.qrcode.service
 import co.genecoin.qrcode.model.Asset
 import co.genecoin.qrcode.model.State
 import co.genecoin.qrcode.repository.BasicCrud
-import co.genecoin.qrcode.repository.QRCodeDAO
+import co.genecoin.qrcode.repository.QRCodeReposityImplement
 import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class QRCodeService(val qrcodeDAO: QRCodeDAO) : BasicCrud<String, Asset> {
+class QRCodeService(val qrcodeDAO: QRCodeReposityImplement) : BasicCrud<String, Asset> {
 
     override fun getById(id: String): Optional<Asset> = qrcodeDAO.findById(id)
 
