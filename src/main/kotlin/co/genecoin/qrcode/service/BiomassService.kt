@@ -16,6 +16,8 @@ class BiomassService(val dao: BiomassReposityImplement) : BasicCrud<String, Biom
 
     override fun getById(id: String): Optional<BiomassRegistry> = dao.findById(id)
 
+    fun getByBioType(type: Int): Optional<BiomassRegistry> = dao.findByBioType(type)
+
     override fun insert(obj: BiomassRegistry): BiomassRegistry = dao.insert(obj)
 
     fun getAll(): List<BiomassRegistry> = dao.findAll()

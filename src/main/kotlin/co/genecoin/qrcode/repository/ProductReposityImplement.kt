@@ -4,6 +4,6 @@ import co.genecoin.qrcode.model.*
 import org.springframework.data.mongodb.repository.MongoRepository
 import java.util.*
 
-interface BiomassReposityImplement : MongoRepository<BiomassRegistry, String>{
-    fun findByBioType(bioType: Int): Optional<BiomassRegistry>
+interface ProductReposityImplement : MongoRepository<Product, String>{
+    fun findByToken(bioType: Int): Optional<Product>
 }

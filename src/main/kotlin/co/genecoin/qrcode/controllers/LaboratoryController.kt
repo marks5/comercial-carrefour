@@ -2,6 +2,7 @@ package co.genecoin.qrcode.controllers
 
 import co.genecoin.qrcode.model.*
 import co.genecoin.qrcode.service.LaboratoryService
+import co.genecoin.qrcode.service.OwnerService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import java.lang.IllegalArgumentException
@@ -15,6 +16,9 @@ class LaboratoryController {
     @Autowired
     lateinit var service: LaboratoryService
 
+    @Autowired
+    lateinit var serviceOwner: OwnerService
+
     @GetMapping
     fun getAll(): List<LaboratoryRegistry> = service.getAll()
 
@@ -23,7 +27,8 @@ class LaboratoryController {
 
     @PostMapping
     fun insert(@RequestBody asset: LaboratoryRegistry): LaboratoryRegistry {
-        if(service.findByAccount(asset.account).isPresent) return service.insert(asset)
-        else throw IllegalArgumentException()
+        if(!serviceOwner.findByAccount(asset.account).isPresent) throw IllegalArgumentException("Você antes precisa ser owner")
+        if(!service.findByAccount(asset.account).isPresent) return service.insert(asset)
+        else throw IllegalArgumentException("Esse endereço já está cadastrado como Lab.")
     }
 }
