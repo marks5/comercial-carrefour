@@ -1,1 +1,1 @@
-rootProject.name = "qrcode"
+rootProject.name = "comercial"
